@@ -63,12 +63,7 @@ button {
 main {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-}
-@media (width <= 375px) {
-  main {
-    gap: 50px;
-  }
+  gap: 50px;
 }
 
 .theme-menu__list {
@@ -319,6 +314,10 @@ main {
   padding: 15px 0;
   background-color: var(--background-accent);
   align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
 }
 .save-btn__text {
   color: var(--mix-blend-color);
