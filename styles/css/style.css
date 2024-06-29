@@ -29,14 +29,15 @@ button {
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
-  font-family: var(--main-font), serif;
+  font-variation-settings: var(--card-text-font-weight);
+  font-family: var(--main-font);
   color: var(--text-color);
 }
 
 .header {
   background-color: var(--background-accent);
   font-family: var(--accent-font);
-  margin: 102px 0 105px;
+  margin: 102px 0 99px;
   padding: 136px 0 24px;
   text-align: center;
   border: 2px solid var(--stroke-color);
@@ -62,7 +63,12 @@ button {
 main {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 48px;
+}
+@media (width <= 375px) {
+  main {
+    gap: 50px;
+  }
 }
 
 .theme-menu__list {
@@ -129,7 +135,7 @@ main {
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 52px;
+  gap: 50px;
 }
 .content__list-item {
   background-color: var(--background-accent);
@@ -174,7 +180,7 @@ main {
 .card__title {
   font-size: 18px;
   font-weight: 700;
-  font-variation-settings: "wght" var(--card-title-font-weight, 700);
+  font-variation-settings: var(--card-title-font-weight);
   padding: 5px 10px;
 }
 .card__img {
@@ -197,26 +203,31 @@ main {
 }
 .card__heart-btn {
   width: 39px;
-  height: 36px;
+  height: 38px;
   padding: 0;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
 }
 .card__heart-btn:focus {
   outline: none;
 }
 .card__heart-btn:focus-visible {
-  outline: 2px solid var(--stroke-color);
-  outline-offset: -1px;
+  border-color: var(--stroke-color);
 }
 .card__btn-text {
   color: var(--mix-blend-color);
   mix-blend-mode: difference;
+  transition: 50s ease-in-out;
 }
 .card__label {
   position: absolute;
   top: 27px;
   right: 25px;
   font-family: var(--accent-font);
+  font-variation-settings: var(--text-font-weight);
   font-size: 14px;
   opacity: 0.5;
   mix-blend-mode: hard-light;
@@ -292,13 +303,15 @@ main {
 .card-img__box {
   overflow: hidden;
   position: relative;
+  border-top: 2px solid var(--stroke-color);
+  border-bottom: 2px solid var(--stroke-color);
 }
 
 .card-content__box {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  padding: 27px 25px 25px 25px;
+  padding: 25px;
 }
 
 .save-btn {

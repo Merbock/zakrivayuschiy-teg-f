@@ -10,8 +10,8 @@
   --gradient-color: #d3d3d3;
   --gradient-start: #e7e7e7;
   --gradient-end: #1a1a1a;
-  --card-title-font-weight: 700;
-  --card-text-font-weight: 400;
+  --card-title-font-weight: "wght" 700;
+  --card-text-font-weight: "wght" 400;
   --header-background: var(--background-accent);
   --text-color: #000;
   --mix-blend-color: var(--background-accent);
@@ -23,8 +23,8 @@
   --gradient-color: var(--background-accent);
   --gradient-start: #007f0c;
   --gradient-end: #004306;
-  --card-title-font-weight: 785;
-  --card-text-font-weight: 465;
+  --card-title-font-weight: "wght" 785;
+  --card-text-font-weight: "wght" 465;
   --header-background: var(--background-accent);
   --text-color: #00cc14;
   --mix-blend-color: var(--text-color);
