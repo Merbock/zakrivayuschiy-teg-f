@@ -35,6 +35,7 @@ button {
   font-size: 14px;
   border: 2px solid $text-color;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .page {
@@ -48,6 +49,7 @@ button {
   font-variation-settings: $card-text-font-weight;
   font-family: $main-font;
   color: $text-color;
+  font-size: 18px;
 }
 
 .header {
@@ -91,7 +93,6 @@ main {
   margin: 0 auto;
   padding-left: 18px;
   align-items: start;
-  
 }
 
 .theme-menu__button{
@@ -160,11 +161,15 @@ main {
   }
 }
 
-
 .button {
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease;
   position: relative;
   overflow: hidden;
+
+  &__text {
+    color: $mix-blend-color;
+    mix-blend-mode: difference;
+  }
 
   &:focus {
     outline: none;
@@ -206,8 +211,8 @@ main {
   &__img {
     display: block;
     object-fit: cover;
-    width: 100%;
-    height: 100%;
+    object-position: center;
+    aspect-ratio: 1 / 1;
   }
 
   &__btn {
@@ -232,6 +237,7 @@ main {
     justify-content: center;
     align-items: center;
     border: 2px solid transparent;
+    transition: 0.3s ease;
     &:focus {
       outline: none;
     }
@@ -242,9 +248,7 @@ main {
   }
 
   &__btn-text {
-    color: $mix-blend-color;
-    mix-blend-mode: difference;
-    transition: 50s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
 
   &__label {
@@ -276,18 +280,22 @@ main {
 
   &:hover .main-body {
     fill: $text-color;
+    transition: fill 0.3s 0.05s linear;
   }
 
   &:hover .core {
     fill: $text-color;
+    transition: fill 0.3s linear;
   }
 
   &:active .main-body {
     fill: $heart-color;
+    transition: fill 0.3s 0.05s linear;
   }
 
   &:active .core {
     fill: $heart-color;
+    transition: fill 0.3s linear;
   }
 
   & .sparks {
@@ -305,19 +313,22 @@ main {
   
   &.is-liked .main-body {
     fill: $heart-color;
+    transition: fill 0.3s 0.05s linear;
   }
   
   &.is-liked .core {
     fill: $heart-color;
+    transition: fill 0.3s linear;
   }
   
   &.is-liked .contour {
     fill: $heart-color;
+    transition: fill 0.3s 0.06s linear;
   }
 }
 
-.heart {
-  transition: fill 0.1s;
+.contour {
+  transition: fill 0.1s linear;
   transform-origin: center center;
 }
 
@@ -328,7 +339,7 @@ main {
 
 .core {
   fill: $background-accent;
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s 0.03s linear;
 }
 
 @supports (text-stroke: 1px var(--label-stroke-color)) or (-webkit-text-stroke: 1px var(--label-stroke-color)) {
@@ -361,11 +372,6 @@ main {
   align-items: center;
   justify-content: center;
   gap: 9px;
-
-  &__text {
-    color: $mix-blend-color;
-    mix-blend-mode: difference;
-  }
 
   @media (width <= 375px) {
     display: flex;
@@ -414,11 +420,6 @@ main {
     padding: 12px 0;
     text-transform: uppercase;
     border: 2px solid $text-color;
-  }
-
-  &__btn-text {
-    color: $mix-blend-color;
-    mix-blend-mode: difference;
   }
 }
 
@@ -476,4 +477,3 @@ main {
 .multi-filter {
   filter: saturate(250%) hue-rotate(90deg) grayscale(20%) invert(25%) blur(2px);
 }
-  

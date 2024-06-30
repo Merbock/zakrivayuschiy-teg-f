@@ -5,6 +5,74 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-accent: #fff;
+    --gradient-color: #d3d3d3;
+    --gradient-start: #e7e7e7;
+    --gradient-end: #1a1a1a;
+    --card-title-font-weight: "wght" 700;
+    --card-text-font-weight: "wght" 400;
+    --header-background: var(--background-accent);
+    --text-color: #000;
+    --mix-blend-color: var(--background-accent);
+    --stroke-color: var(--text-color);
+    --label-stroke-color: var(--background-accent);
+    --bg-image: repeating-linear-gradient(
+        to right,
+        var(--gradient-color) 0,
+        var(--gradient-color) 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+    repeating-linear-gradient(
+        to bottom,
+        var(--gradient-color) 0,
+        var(--gradient-color) 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+    linear-gradient(
+        to bottom,
+        var(--gradient-start) 0.01%,
+        var(--gradient-end)
+    );
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-accent: #000;
+    --gradient-color: var(--background-accent);
+    --gradient-start: #007f0c;
+    --gradient-end: #004306;
+    --card-title-font-weight: "wght" 785;
+    --card-text-font-weight: "wght" 465;
+    --header-background: var(--background-accent);
+    --text-color: #00cc14;
+    --mix-blend-color: var(--text-color);
+    --stroke-color: var(--text-color);
+    --label-stroke-color: var(--background-accent);
+    --bg-image: repeating-linear-gradient(
+        to right,
+        var(--gradient-color) 0,
+        var(--gradient-color) 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+    repeating-linear-gradient(
+        to bottom,
+        var(--gradient-color) 0,
+        var(--gradient-color) 2px,
+        transparent 2px,
+        transparent 4px
+    ),
+    linear-gradient(
+        to bottom,
+        var(--gradient-start) 0.01%,
+        var(--gradient-end)
+    );
+  }
+}
 :root.theme-light {
   --background-accent: #fff;
   --gradient-color: #d3d3d3;
