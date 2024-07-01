@@ -27,6 +27,7 @@ button {
   min-block-size: 100dvb;
   max-width: 700px;
   margin: 0 auto;
+  margin-block-end: 100px;
   background-image: var(--bg-image);
   background-attachment: fixed;
   background-size: cover;
@@ -201,7 +202,10 @@ main {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  
 }
 
 .card__btn {
@@ -235,10 +239,6 @@ main {
 
 .card__heart-btn:focus-visible {
   border-color: var(--stroke-color);
-}
-
-.card__btn-text {
-  transition: 0.5s ease-in-out;
 }
 
 .card__label {
@@ -364,9 +364,7 @@ main {
 
 @media (width <= 375px) {
   .save-btn {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 8px;
     inline-size: 310px;
   }
@@ -375,13 +373,19 @@ main {
 .modal {
   padding: 0;
   border: 2px solid var(--text-color);
+  overflow: unset;
+}
+
+.modal[open] {
+  display: flex;  
+  justify-content: center;
 }
 
 .modal__box {
   max-inline-size: 353px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 24px;
   padding: 30px;
   background-color: var(--background-accent);
   color: var(--text-color);
@@ -429,12 +433,13 @@ main {
 
 @media (width <= 400px) {
   .modal__box {
-    padding: 18px;
+    padding: 30px 42px 30px 42px;
+    min-width: 341px;
   }
 }
 
 .modal__box .floppy-img {
-  width: 39px;
+  width: 94px;
   height: 39px;
   color: var(--text-color);
 }

@@ -43,6 +43,7 @@ button {
   min-block-size: 100dvb;
   max-width: 700px;
   margin: 0 auto;
+  margin-block-end: 100px;
   background-image: $bg-image;
   background-attachment: fixed;
   background-size: cover;
@@ -212,6 +213,8 @@ main {
     display: block;
     object-fit: cover;
     object-position: center;
+    width: 100%;
+    height: 100%;
     aspect-ratio: 1 / 1;
   }
 
@@ -245,10 +248,6 @@ main {
     &:focus-visible {
       border-color: $stroke-color;
     }
-  }
-
-  &__btn-text {
-    transition: 0.5s ease-in-out;
   }
 
   &__label {
@@ -374,9 +373,7 @@ main {
   gap: 9px;
 
   @media (width <= 375px) {
-    display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 8px;
     inline-size: 310px;
   }
@@ -385,12 +382,15 @@ main {
 .modal {
   padding: 0;
   border: 2px solid $text-color;
+  overflow: unset;
+  display: flex;  
+  justify-content: center;
 
   &__box {
     max-inline-size: 353px;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 24px;
     padding: 30px;
     background-color: $background-accent;
     color: $text-color;
@@ -423,6 +423,11 @@ main {
   }
 }
 
+.modal[open] {
+  display: flex;  
+  justify-content: center;
+}
+
 .save-btn .floppy-img {
   mix-blend-mode: difference;
   width: 21px;
@@ -436,12 +441,13 @@ main {
 
 .modal__box {
   @media (width <= 400px) {
-    padding: 18px;
+    padding: 30px 42px 30px 42px;
+    min-width: 341px;
   }
 }
 
 .modal__box .floppy-img {
-  width: 39px;
+  width: 94px;
   height: 39px;
   color: $text-color;
 }
