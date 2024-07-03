@@ -55,4 +55,8 @@ ol {
 
 svg {
   cursor: pointer;
+}
+
+button {
+  line-height: 1.15;
 }/*# sourceMappingURL=globals.css.map */

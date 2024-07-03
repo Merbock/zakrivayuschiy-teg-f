@@ -40,8 +40,8 @@ button {
 .header {
   background-color: var(--background-accent);
   font-family: var(--accent-font);
-  margin: 102px 0 99px;
-  padding: 136px 0 24px;
+  margin: 102px 0 97px;
+  padding: 134px 0 24px;
   text-align: center;
   border: 2px solid var(--stroke-color);
 }
@@ -51,18 +51,32 @@ button {
   display: block;
   margin-block-end: 20px;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  line-height: 65px;
   text-transform: uppercase;
+}
+
+@media (width <= 375px) {
+  .header__logo {
+    margin-block-end: 8px;
+  }
 }
 
 .header__title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  line-height: 23px;
   text-transform: uppercase;
-  margin-block-end: 21px;
+  margin-block-end: 24px;
+}
+
+@media (width <= 375px) {
+  .header__title {
+    margin-block-end: 18px;
+  }
 }
 
 @media (width <= 375px) {
   .header {
-    padding: 120px 0 24px;
+    padding: 110px 0 24px;
   }
 }
 
@@ -75,12 +89,16 @@ main {
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   width: -moz-min-content;
   width: min-content;
   margin: 0 auto;
   padding-left: 18px;
   align-items: start;
+}
+
+.theme-menu__item {
+  line-height: 14px;
 }
 
 .theme-menu__button {
@@ -136,8 +154,9 @@ main {
 .content__list {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 47px;
 }
+
 .content__list-item {
   background-color: var(--background-accent);
 }
@@ -196,16 +215,19 @@ main {
   padding: 5px 10px;
 }
 
+.card__content {
+  line-height: 21px;
+}
+
 .card__img {
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  aspect-ratio: 1 / 1;
   width: 100%;
   height: 100%;
-  
+  aspect-ratio: 1/1;
 }
 
 .card__btn {
@@ -337,6 +359,7 @@ main {
     -webkit-text-stroke: 1px var(--label-stroke-color);
   }
 }
+
 .card-img__box {
   overflow: hidden;
   position: relative;
@@ -348,7 +371,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  padding: 25px;
+  padding: 26px 25px 25px 25px;
 }
 
 .save-btn {
@@ -365,7 +388,7 @@ main {
 @media (width <= 375px) {
   .save-btn {
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
     inline-size: 310px;
   }
 }
@@ -373,19 +396,13 @@ main {
 .modal {
   padding: 0;
   border: 2px solid var(--text-color);
-  overflow: unset;
-}
-
-.modal[open] {
-  display: flex;  
-  justify-content: center;
 }
 
 .modal__box {
   max-inline-size: 353px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 25px;
   padding: 30px;
   background-color: var(--background-accent);
   color: var(--text-color);
@@ -417,6 +434,12 @@ main {
   border: 2px solid var(--text-color);
 }
 
+.modal[open] {
+  display: flex;
+  justify-content: center;
+  min-width: 341px;
+}
+
 .save-btn .floppy-img {
   mix-blend-mode: difference;
   width: 21px;
@@ -433,14 +456,13 @@ main {
 
 @media (width <= 400px) {
   .modal__box {
-    padding: 30px 42px 30px 42px;
-    min-width: 341px;
+    padding: 30px 41px 30px 41px;
   }
 }
 
 .modal__box .floppy-img {
-  width: 94px;
-  height: 39px;
+  inline-size: 39px;
+  flex-shrink: 0;
   color: var(--text-color);
 }
 
